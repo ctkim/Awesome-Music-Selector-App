@@ -1,9 +1,11 @@
 package com.example.awesomemusicselectorapp;
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class SecondActivity extends ActionBarActivity {
 
@@ -11,6 +13,12 @@ public class SecondActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_second);
+		
+		Intent intent = getIntent();
+		int number = intent.getIntExtra("BUTTON NUMBER", 1);
+		
+		TextView tv = (TextView) findViewById(R.id.textView);
+		tv.setText(String.valueOf(number));
 	}
 
 	@Override
